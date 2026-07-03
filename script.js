@@ -71,3 +71,11 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+// Clear contact form on page show (handles browser back-button caching)
+window.addEventListener('pageshow', () => {
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.reset();
+    }
+});
